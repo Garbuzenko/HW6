@@ -11,7 +11,7 @@ function getClickOpen(el){
         }); 
 
         //Если признак не стоит - проставим
-        if ( menu_sub.classList.contains("menu_active") == true ) {
+        if ( menu_sub.hasAttribute("classList") && menu_sub.classList.contains("menu_active") == true ) {
             menu_sub.classList.remove("menu_active")
         }else{
             menu_sub.classList.add("menu_active")
