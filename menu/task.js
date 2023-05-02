@@ -1,30 +1,32 @@
 function getClickOpen(el){
     return function(){
-        //Ближайший элемент menu_sub
-        const menu_sub = el.closest('.menu__item').querySelector('.menu_sub')
+        //Ближайший элемент menuSub
+        const menuSub = el.closest('.menu__item').querySelector('.menu_sub')
 
-        //Уберём у всех других признак
+        //Уберём у всех других элементов подменю признак активности
         document.querySelectorAll('.menu_sub').forEach(element => {
-            if ( element != menu_sub ){
+            if ( element != menuSub ){
                 element.classList.remove("menu_active")
             }
         }); 
 
         //Если признак не стоит - проставим
-        if ( menu_sub.hasAttribute("classList") && menu_sub.classList.contains("menu_active") == true ) {
-            menu_sub.classList.remove("menu_active")
-        }else{
-            menu_sub.classList.add("menu_active")
-        }
+        if ( menuSub  != null ) {
+            if  (menuSub.classList.contains("menu_active") == true ) {
+                menuSub.classList.remove("menu_active")
+            }else{
+                menuSub.classList.add("menu_active")
+            }
+        }   
 
         return false;
 
     }
 }
 
-const menu_sub = document.querySelectorAll('.menu__link')
+const menuSub = document.querySelectorAll('.menu__link')
 
-menu_sub.forEach(el => {
+menuSub.forEach(el => {
     el.onclick = getClickOpen(el)
 }); 
 
