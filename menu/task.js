@@ -17,7 +17,10 @@ function getClickOpen(el){
             }else{
                 menuSub.classList.add("menu_active")
             }
-        }   
+           
+        } else{
+            return true
+        } 
 
         return false;
 
